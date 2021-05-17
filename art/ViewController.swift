@@ -8,18 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var header: UILabel!
-    @IBOutlet weak var headerButton: UIButton!
-    @IBAction func headerButton(_ sender: UIButton) {
-        header.text = "clicked"
-    }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        header.text = "hello"
-        
+        super.viewDidLoad()      
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toItemDetails") {
+            let dvc = segue.destination
+        }
+    }
+    
+    @IBAction func createNewItem(_ sender: Any) {
+        performSegue(withIdentifier: "createNewItem", sender: self)
+    }
+    
+    @IBAction func backToMenu(segue: UIStoryboardSegue){
+        print("backToMenu")
     }
     
 }
