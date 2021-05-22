@@ -9,21 +9,15 @@ import UIKit
 
 class UserSettingsViewController: UIViewController {
 
+    @IBOutlet weak var userSettingsView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let userSettingsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "editUserViewController")
+        self.addChild(userSettingsVC)
+        userSettingsVC.view.frame = userSettingsView.frame
+        userSettingsVC.view.frame.origin = CGPoint(x: 0, y: 0)
+        
+        userSettingsView.addSubview(userSettingsVC.view)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
