@@ -15,8 +15,6 @@ class AddItemViewController: UIViewController {
         
         let createItemVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "createItemViewController")
         self.addChild(createItemVC)
-        createItemVC.view.frame = addItemViewController.frame
-        createItemVC.view.frame.origin = CGPoint(x: 0, y: 0)
         
         addItemViewController.addSubview(createItemVC.view)
     }
