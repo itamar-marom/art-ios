@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Browse-->
+        <!--Shop-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ItemsListViewController" customModule="art" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Browse" id="tZm-wB-3cX">
+                    <navigationItem key="navigationItem" title="Shop" id="tZm-wB-3cX">
                         <barButtonItem key="backBarButtonItem" title="main" id="GqA-rV-IG6"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="trash" catalog="system" id="Zal-0R-49n">
                             <connections>
@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="-428" y="53"/>
         </scene>
-        <!--User Settings View Controller-->
+        <!--Account-->
         <scene sceneID="dxg-SA-biN">
             <objects>
                 <viewController id="4xv-b1-eK0" customClass="UserSettingsViewController" customModule="art" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,7 +115,7 @@
                         <viewLayoutGuide key="safeArea" id="hOv-Lj-cBw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nMC-Jw-PJm"/>
+                    <navigationItem key="navigationItem" title="Account" id="nMC-Jw-PJm"/>
                     <connections>
                         <outlet property="userSettingsView" destination="GU0-8j-jMi" id="QJR-Qz-SeH"/>
                     </connections>
@@ -176,7 +176,7 @@
             </objects>
             <point key="canvasLocation" x="-429" y="729"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Search-->
         <scene sceneID="9iV-i2-kP9">
             <objects>
                 <tableViewController id="Nyu-2F-ef3" sceneMemberID="viewController">
@@ -199,7 +199,7 @@
                             <outlet property="delegate" destination="Nyu-2F-ef3" id="Q4Y-Qy-rkg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="eHZ-7F-HOK"/>
+                    <navigationItem key="navigationItem" title="Search" id="eHZ-7F-HOK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F17-YJ-KeA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,11 +222,11 @@
             </objects>
             <point key="canvasLocation" x="-430" y="2087"/>
         </scene>
-        <!--Login-->
+        <!--Account-->
         <scene sceneID="laR-au-s8F">
             <objects>
                 <navigationController id="UgL-oF-UR0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Login" image="person" catalog="system" id="S86-lg-GV3"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="person" catalog="system" id="S86-lg-GV3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Pp-fI-NgS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -250,9 +250,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="pdE-xm-eHF" kind="relationship" relationship="viewControllers" id="6Be-fk-3DP"/>
+                        <segue destination="hSq-qs-4Tv" kind="relationship" relationship="viewControllers" id="u37-b1-fsa"/>
                         <segue destination="BAI-cX-4Z9" kind="relationship" relationship="viewControllers" id="jAv-ER-Gap"/>
                         <segue destination="UgL-oF-UR0" kind="relationship" relationship="viewControllers" id="udM-hm-yNt"/>
-                        <segue destination="hSq-qs-4Tv" kind="relationship" relationship="viewControllers" id="u37-b1-fsa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o22-cd-Uad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
