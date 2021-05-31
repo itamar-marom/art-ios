@@ -7,15 +7,22 @@
 
 import UIKit
 
-class SearchItemViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SearchItemViewController: UIViewController {
 
+    @IBOutlet weak var viewContainer: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let childItemsListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ChildItemsViewController") as! ItemsViewController
+        
+        self.addChild(childItemsListVC)
+        
+        childItemsListVC.view.frame = viewContainer.frame
+        childItemsListVC.view.frame.origin = CGPoint(x: 0,y: 20)
+        
+        viewContainer.addSubview(childItemsListVC.view)
     }
-    
-    @IBOutlet weak var searchTableView: UITableView!
     
     /*
     // MARK: - Navigation
@@ -26,19 +33,4 @@ class SearchItemViewController: UIViewController, UITableViewDataSource, UITable
         // Pass the selected object to the new view controller.
     }
     */
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = searchTableView.dequeueReusableCell(withIdentifier: "searchListRow", for: indexPath) as! SearchTableViewCell
-        cell.itemHeaderLabel.text = "ESSENTIALS"
-        cell.itemPriceLabel.text = "400$"
-        return cell
-    }
 }

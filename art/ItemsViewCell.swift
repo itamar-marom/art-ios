@@ -1,5 +1,5 @@
 //
-//  SearchTableViewCell.swift
+//  ItemsViewCell.swift
 //  art
 //
 //  Created by Itamar Marom on 31/05/2021.
@@ -7,12 +7,11 @@
 
 import UIKit
 
-class SearchTableViewCell: UITableViewCell {
+class ItemsViewCell: UITableViewCell {
 
-    @IBOutlet weak var itemImage: UIImageView!
-    @IBOutlet weak var itemHeaderLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
-    
+    @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var itemImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
