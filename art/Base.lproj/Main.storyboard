@@ -206,7 +206,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udK-Lq-MZz">
+                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="udK-Lq-MZz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -218,6 +218,7 @@
                     <navigationItem key="navigationItem" title="Search" id="4XC-hT-gKK"/>
                     <connections>
                         <outlet property="viewContainer" destination="jEy-Pb-hvf" id="GCI-bd-pma"/>
+                        <segue destination="4cV-qK-4tt" kind="custom" identifier="ItemListCustomSegueSearch" customClass="ItemListCustomSegue" customModule="art" customModuleProvider="target" id="js9-GX-Cvf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIQ-LU-Zyl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -7,21 +7,20 @@
 
 import UIKit
 
-class SearchItemViewController: UIViewController {
-
+class SearchItemViewController: UIViewController, ItemListCustomSegueSourceDelegate {
+    func getViewContainer(forIdentifier: String) -> UIView {
+        return viewContainer
+    }
+    
     @IBOutlet weak var viewContainer: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        let childItemsListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ChildItemsViewController") as! ItemsViewController
         
-        self.addChild(childItemsListVC)
-        
-        childItemsListVC.view.frame = viewContainer.frame
-        childItemsListVC.view.frame.origin = CGPoint(x: 0,y: 20)
-        
-        viewContainer.addSubview(childItemsListVC.view)
+        performSegue(withIdentifier: "ItemListCustomSegueSearch", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let childItemsListVC = segue.destination as! SearchItemViewController
     }
     
     /*
@@ -33,4 +32,22 @@ class SearchItemViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+protocol ItemListCustomSegueSourceDelegate {
+    func getViewContainer(forIdentifier:String)->UIView
+}
+class ItemListCustomSegue: UIStoryboardSegue {
+    override func perform() {
+        // Do any additional setup after loading the view.
+        
+        source.addChild(destination)
+        
+        let parent = source as! ItemListCustomSegueSourceDelegate
+        let container = parent.getViewContainer(forIdentifier: identifier ?? "")
+        destination.view.frame = container.frame
+        destination.view.frame.origin = CGPoint(x: 0,y: 20)
+        
+        container.addSubview(destination.view)
+    }
 }
