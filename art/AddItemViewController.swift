@@ -10,13 +10,14 @@ import UIKit
 class AddItemViewController: UIViewController {
     @IBOutlet weak var addItemViewController: UIView!
     
+    @IBOutlet weak var itemName: UITextField!
+    @IBOutlet weak var itemImage: UIImageView!
+    @IBAction func addItemButton(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let createItemVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "createItemViewController")
-        self.addChild(createItemVC)
-        
-        addItemViewController.addSubview(createItemVC.view)
+       
     }
 
 }
