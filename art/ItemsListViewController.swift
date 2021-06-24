@@ -16,12 +16,12 @@ class ItemsListViewController: UIViewController, ItemListCustomSegueSourceDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        performSegue(withIdentifier: "ItemListCustomSegueShop", sender: self)
+//        performSegue(withIdentifier: "ItemListCustomSegueShop", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let childItemsListVC = segue.destination as! SearchItemViewController
-    }
+//    }
     
 //    @IBOutlet weak var itemsTableView: UITableView!
 //    @IBOutlet weak var trashButton: UIBarButtonItem!
